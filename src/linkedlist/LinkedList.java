@@ -2,6 +2,7 @@ package linkedlist;
 
 public class LinkedList {
 	Node head;
+	Node tail;
 
 	class Node {
 		int data;
@@ -50,13 +51,20 @@ public class LinkedList {
 
 	}
 
-	public int pop() {
-		int popData = 0;
+	public int poplast() {
 		if (head == null) {
-			System.out.println("Stack Over Flow");
+			System.out.println("Empty");
+		} else if (head.next == null) {
+			head = null;
+		} else {
+			Node n = head;
+			Node n1 = head;
+			while (n.next != null) {
+				n1 = n;
+				n = n.next;
+			}
+			n1.next = null;
 		}
-		popData = head.data;
-		head = head.next;
-		return popData;
+		return 0;
 	}
 }
