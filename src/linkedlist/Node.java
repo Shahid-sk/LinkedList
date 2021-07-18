@@ -5,9 +5,9 @@ public class Node {
 		System.out.println("Welcome to Linked List Program");
 
 		LinkedList linkedList = new LinkedList();
-		linkedList.append(70);
-		linkedList.append(30);
-		linkedList.append(56);
+		LinkedList.Node prevNode = linkedList.insert(56);
+		linkedList.insertAfter(prevNode, 70);
+		linkedList.insertAfter(prevNode, 30);
 
 		linkedList.print();
 

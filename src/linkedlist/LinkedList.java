@@ -13,7 +13,7 @@ public class LinkedList {
 		}
 	}
 
-	public void insert(int data) {
+	public Node insert(int data) {
 
 		Node newNode = new Node(data);
 		if (head == null) {
@@ -25,6 +25,7 @@ public class LinkedList {
 			}
 			temp.next = newNode;
 		}
+		return newNode;
 	}
 
 	public void print() {
@@ -36,19 +37,16 @@ public class LinkedList {
 		System.out.println();
 	}
 
-	public void append(int data) {
-		Node newNode = new Node(data);
-		newNode.next = head;
-		head = newNode;
-	}
+	public void insertAfter(Node prevNode, int value) {
 
-	public void printf() {
-		Node temp = head;
-		while (temp != null) {
-			System.out.print(temp.data + "->");
-			temp = temp.next;
+		if (prevNode == null) {
+			System.out.println("Previous Node should not be NULL");
+			return;
 		}
-		System.out.println();
-	}
 
+		Node newNode = new Node(value);
+		newNode.next = prevNode.next;
+		prevNode.next = newNode;
+
+	}
 }
