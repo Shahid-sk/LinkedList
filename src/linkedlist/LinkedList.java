@@ -89,4 +89,22 @@ public class LinkedList {
 		else
 			System.out.println("Element is not present in the list");
 	}
+
+	public void deleteElement(int check) {
+		int count = 0;
+		Node current = head;
+		while (current != null) {
+			if (current.next.data == check) {
+				current.next = null;
+			}
+			count++;
+			current = current.next;
+		}
+
+	}
+
+	public void printsize() {
+		int count = 3;
+		System.out.println("size of list: " + count);
+	}
 }

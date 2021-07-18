@@ -10,8 +10,9 @@ public class Node {
 		linkedList.insert(40);
 		linkedList.insert(70);
 		linkedList.print();
-		linkedList.searchNode(30);
-
+		linkedList.deleteElement(40);
+		linkedList.printsize();
+	    linkedList.insert(70);
 		linkedList.print();
 
 	}
